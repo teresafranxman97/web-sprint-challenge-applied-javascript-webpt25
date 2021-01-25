@@ -1,4 +1,3 @@
-const Tabs = (topics) => {
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
@@ -12,7 +11,33 @@ const Tabs = (topics) => {
   //   <div class="tab">bootstrap</div>
   //   <div class="tab">technology</div>
   // </div>
+
+import axios from "axios";
+
   //
+const Tabs = (topics) => {
+  const topic = document.createElement('div');
+  const tabOne = document.createElement('div');
+  const tabTwo = document.createElement('div');
+  const tabThree = document.createElement('div');
+
+
+  topic.className = 'topics';
+  tabOne.className = 'tab';
+  tabTwo.className = 'tab';
+  tabThree.className = 'tab';
+
+
+  tabOne.textContent = 'javascript';
+  tabTwo.textContent = 'bootstrap';
+  tabThree.textContent = 'technology';
+
+
+  topic.appendChild(tabOne);
+  topic.appendChild(tabTwo);
+  topic.appendChild(tabThree);
+
+  return topic;
 }
 
 const tabsAppender = (selector) => {
@@ -23,6 +48,18 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then((response) => {
+      console.log(response.data);
+      // response.data.forEach((item) => {
+
+      // })
+    })
+    .catch((error) => {
+      console.log('error', error);
+    })
 }
+
+console.log(tabsAppender('.tabs-container'))
 
 export { Tabs, tabsAppender }

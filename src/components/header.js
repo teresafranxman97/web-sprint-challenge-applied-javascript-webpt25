@@ -23,9 +23,9 @@ const Header = (title, date, temp) => {
   tempSpan.className = 'temp';
 
   // ADD TEXT
-  dateSpan.textContent = date;
-  titleOne.textContent = title;
-  tempSpan.textContent = temp;
+  dateSpan.textContent = `${date}`
+  titleOne.textContent = `${title}`
+  tempSpan.textContent = `${temp}`
 
  // CREATE HIERARCHY
   headerDiv.appendChild(dateSpan);
@@ -47,11 +47,11 @@ const Header = (title, date, temp) => {
 //   It should append the header to the element in the DOM that matches the given selector.
 
 const headerAppender = (selector) => {
-  selector.forEach((selected) => {
-    const headerComponent = selected('title', 'time', 'temp');
-    const newHeader = document.querySelector('.header-container')
-  })
-
+    const headerComponent = Header('title', 'date', 'temp');
+    const headers = document.querySelector('.header-container')
+    headers.appendChild(headerComponent);
 }
+headerAppender('.header-container')
+
 
 export { Header, headerAppender }
