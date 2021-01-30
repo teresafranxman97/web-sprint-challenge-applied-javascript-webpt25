@@ -1,3 +1,5 @@
+
+
 # Applied JavaScript Sprint Challenge
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
@@ -75,6 +77,9 @@ There are two possible ways to submit this project to Canvas. Lambda Staff will 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+- Document Object Model(DOM), also known as the virtual DOM, is a 
+
 2. What is an event?
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
